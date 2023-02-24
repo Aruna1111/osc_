@@ -9,7 +9,7 @@ clean:
         $(MAKE) -C /lib/modules/$(shell uname -r)/build CC=$(CC) M=$(PWD) clean
         $(RM) other/cat_noblock *.plist
 test:
-        sudo rmmod schedule
+        sudo rmmod crypta
         sudo dmesg -C
-        sudo insmod schedule.ko
+        sudo insmod crypta.ko
         dmesg
