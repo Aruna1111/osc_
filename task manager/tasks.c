@@ -22,6 +22,9 @@ static void tasklet_fn(unsigned long data)
  
 static DECLARE_TASKLET_OLD(mytask, tasklet_fn); 
  
+/*Callback runs in atomic context, inside a software interrupt,
+*/
+
 static int example_tasklet_init(void) 
 { 
     pr_info("tasklet example init\n"); 
