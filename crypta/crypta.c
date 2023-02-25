@@ -1,8 +1,11 @@
 #include <crypto/internal/hash.h> 
 #include <linux/module.h> 
   
-#define SHA256_LENGTH 32 
-  
+#define SHA256_LENGTH 32
+/*
+  To provide the sha256 algorithm support, we should make sure CONFIG_CRYPTO_SHA256 is enabled in kernel.
+ */
+
 static void show_hash_result(char *plaintext, char *hash_sha256) 
 { 
     int i; 
