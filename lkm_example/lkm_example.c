@@ -11,7 +11,7 @@ static int __init hello_init(void) /* Defines which function is to be called at 
     return 0;
 }
 
-static void __exit hello_exit(void) /* Macro defines the function to be called at module removal time */
+static void __exit hello_exit(void) /* Macro defines the function to be called at module removal time */ 
 {
     pr_info("Goodbye, Aliya and Aruna\n");
 }
