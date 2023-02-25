@@ -3,13 +3,16 @@
 #include <linux/kernel.h> 
 #include <linux/module.h> 
  
-/* Макрос DECLARE_TASKLET_OLD присутствует для совместимости. 
- * См. https://lwn.net/Articles/830964/.
+/* DECLARE_TASKLET_OLD present for compatibility. 
  */ 
 #ifndef DECLARE_TASKLET_OLD 
 #define DECLARE_TASKLET_OLD(arg1, arg2) DECLARE_TASKLET(arg1, arg2, 0L) 
 #endif 
  
+/*
+The tasklet callback is executed in an atomic context inside a program interrupt
+*/
+
 static void tasklet_fn(unsigned long data) 
 { 
     pr_info("Example tasklet starts\n"); 
