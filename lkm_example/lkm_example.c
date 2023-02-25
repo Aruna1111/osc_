@@ -2,6 +2,9 @@
 #include <linux/module.h> /* Needed by all modules */
 #include <linux/printk.h> /* Needed for pr_info() */
 
+/* Using the module_init() and module_exit() macros it is easy to write code without #ifdefs
+*/
+
 static int __init hello_init(void)
 {
     pr_info("Hello, Aliya and Aruna\n");
