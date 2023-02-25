@@ -18,6 +18,9 @@ static void show_hash_result(char *plaintext, char *hash_sha256)
     pr_info("%s\n", str); 
 } 
   
+/* A hash is calculated for the test string.
+*/
+
 static int cryptosha256_init(void) 
 { 
     char *plaintext = "This is a test"; 
@@ -28,6 +31,9 @@ static int cryptosha256_init(void)
     sha256 = crypto_alloc_shash("sha256", 0, 0); 
     if (IS_ERR(sha256)) 
         return -1; 
+  
+  /* Standard encryption/decryption methods and hash functions.
+  */
   
     shash = kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256), 
                     GFP_KERNEL); 
