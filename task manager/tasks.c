@@ -34,6 +34,9 @@ static int example_tasklet_init(void)
     return 0; 
 } 
  
+/* Also, multiple different tasklet callbacks can run in parallel.
+*/
+
 static void example_tasklet_exit(void) 
 { 
     pr_info("tasklet example exit\n"); 
